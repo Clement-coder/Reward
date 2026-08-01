@@ -1,24 +1,88 @@
+import { useCallback, useEffect, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
+import { AnimatePresence, motion } from "motion/react";
+import { Landing } from "@/components/nova/Landing";
+import { SpinStage } from "@/components/nova/SpinStage";
+import { WinScreen } from "@/components/nova/WinScreen";
+import { ClaimScreen } from "@/components/nova/ClaimScreen";
+import type { Prize } from "@/lib/prizes";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "Nova Chase — Premium Prize Challenge Experience" },
+      {
+        name: "description",
+        content:
+          "Spin for a chance to unlock cash prizes or luxury vehicles in Nova Chase, a premium interactive promotional experience.",
+      },
+      { property: "og:title", content: "Nova Chase — Chase Luxury. Unlock Incredible Rewards." },
+      {
+        property: "og:description",
+        content:
+          "A cinematic promotional experience featuring cash rewards up to $100,000 and luxury electric vehicles.",
+      },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
+type Stage = "loading" | "landing" | "spinning" | "won" | "claim";
+
 function Index() {
+  const [stage, setStage] = useState<Stage>("loading");
+  const [prize, setPrize] = useState<Prize | null>(null);
+
+  useEffect(() => {
+    const t = setTimeout(() => setStage("landing"), 1500);
+    return () => clearTimeout(t);
+  }, []);
+
+  const handleComplete = useCallback((p: Prize) => {
+    setPrize(p);
+    setStage("won");
+  }, []);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") window.scrollTo({ top: 0 });
+  }, [stage]);
+
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
+    <main className="relative min-h-screen bg-background">
+      <AnimatePresence mode="wait">
+        {stage === "loading" && <Loader key="loader" />}
+        {stage === "landing" && <Landing key="landing" onStart={() => setStage("spinning")} />}
+        {stage === "spinning" && <SpinStage key="spin" onComplete={handleComplete} />}
+        {stage === "won" && prize && (
+          <WinScreen key="won" prize={prize} onClaim={() => setStage("claim")} />
+        )}
+        {stage === "claim" && prize && (
+          <ClaimScreen key="claim" prize={prize} onRestart={() => setStage("landing")} />
+        )}
+      </AnimatePresence>
+    </main>
+  );
+}
+
+function Loader() {
+  return (
+    <motion.div
+      exit={{ opacity: 0, filter: "blur(12px)" }}
+      transition={{ duration: 0.6 }}
+      className="surface-hero fixed inset-0 z-50 grid place-items-center bg-background"
     >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+      <div className="text-center">
+        <motion.div
+          animate={{ rotate: 360 }}
+          transition={{ duration: 1.6, repeat: Infinity, ease: "linear" }}
+          className="mx-auto h-14 w-14 rounded-full border-2 border-border border-t-primary"
+        />
+        <p className="mt-6 font-display text-xs uppercase tracking-[0.42em] text-muted-foreground">
+          Nova Chase
+        </p>
+      </div>
+    </motion.div>
   );
 }
