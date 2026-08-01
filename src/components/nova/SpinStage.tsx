@@ -25,7 +25,7 @@ export function SpinStage({ onComplete }: { onComplete: (p: Prize) => void }) {
       tick(520 + (i % 6) * 90, 0.04, 0.035);
 
       if (t >= 1 && i === targetRef.current) {
-        setTimeout(() => onComplete(allPrizes[targetRef.current]), 700);
+        setTimeout(() => onComplete(allPrizes[targetRef.current]!), 700);
         return;
       }
       timer = setTimeout(step, delay);
@@ -34,7 +34,7 @@ export function SpinStage({ onComplete }: { onComplete: (p: Prize) => void }) {
     return () => clearTimeout(timer);
   }, [onComplete]);
 
-  const prize = allPrizes[current];
+  const prize = allPrizes[current]!;
 
   return (
     <motion.section
