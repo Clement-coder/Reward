@@ -1,8 +1,9 @@
 import { motion } from "motion/react";
-import { Sparkles, ChevronRight, ShieldCheck, Gauge, Gift } from "lucide-react";
+import { ChevronRight, ShieldCheck, Gauge, Gift } from "lucide-react";
 import { Particles } from "./Particles";
 import { PrizeCard } from "./PrizeCard";
 import { cashPrizes, vehiclePrizes } from "@/lib/prizes";
+import logoSrc from "@/assets/logo.png";
 
 export function Landing({ onStart }: { onStart: () => void }) {
   return (
@@ -15,8 +16,8 @@ export function Landing({ onStart }: { onStart: () => void }) {
             transition={{ duration: 0.7 }}
             className="flex items-center gap-2"
           >
-            <span className="grid h-8 w-8 place-items-center rounded-xl bg-primary text-primary-foreground glow-red">
-              <Sparkles className="h-4 w-4" />
+            <span className="grid h-8 w-8 place-items-center rounded-xl glass overflow-hidden glow-red">
+              <img src={logoSrc} alt="Nova Chase" className="h-full w-full object-contain" />
             </span>
             <span className="font-display text-lg tracking-[0.22em] uppercase">Nova Chase</span>
           </motion.div>
@@ -38,13 +39,36 @@ export function Landing({ onStart }: { onStart: () => void }) {
         />
 
         <div className="relative z-10 mx-auto w-full max-w-3xl text-center">
+          {/* Hero Logo — glassmorphism frame */}
           <motion.div
             initial={{ opacity: 0, scale: 0.6, rotate: -12 }}
             animate={{ opacity: 1, scale: 1, rotate: 0 }}
             transition={{ duration: 1.1, ease: [0.19, 1, 0.22, 1] }}
-            className="mx-auto mb-8 grid h-24 w-24 place-items-center rounded-[1.6rem] glass animate-glow animate-float"
+            className="relative mx-auto mb-8 h-36 w-36 animate-float"
           >
-            <Sparkles className="h-10 w-10 text-primary" />
+            {/* Outer glow ring */}
+            <motion.div
+              aria-hidden
+              animate={{ opacity: [0.5, 1, 0.5], scale: [0.92, 1.06, 0.92] }}
+              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+              className="pointer-events-none absolute inset-0 rounded-[2rem] bg-primary/30 blur-[28px]"
+            />
+            {/* Glass card */}
+            <div className="relative h-full w-full overflow-hidden rounded-[2rem] glass animate-glow p-3">
+              {/* Inner subtle gradient overlay */}
+              <div
+                className="pointer-events-none absolute inset-0 rounded-[2rem]"
+                style={{
+                  background:
+                    "linear-gradient(135deg, oklch(1 0 0 / 0.12) 0%, transparent 50%, oklch(0.57 0.226 26.5 / 0.12) 100%)",
+                }}
+              />
+              <img
+                src={logoSrc}
+                alt="Nova Chase logo"
+                className="relative z-10 h-full w-full object-contain drop-shadow-[0_2px_18px_oklch(0.62_0.24_27/0.7)]"
+              />
+            </div>
           </motion.div>
 
           <motion.span
