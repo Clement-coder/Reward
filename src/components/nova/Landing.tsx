@@ -2,7 +2,7 @@ import { motion } from "motion/react";
 import { ChevronRight, ShieldCheck, Gauge, Gift } from "lucide-react";
 import { Particles } from "./Particles";
 import { PrizeCard } from "./PrizeCard";
-import { cashPrizes, vehiclePrizes } from "@/lib/prizes";
+import { cashPrizes, vehiclePrizes, bikePrizes } from "@/lib/prizes";
 import logoSrc from "@/assets/logo.png";
 
 export function Landing({ onStart }: { onStart: () => void }) {
