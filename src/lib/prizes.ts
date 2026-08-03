@@ -2,6 +2,8 @@ import cash from "@/assets/cash.jpg";
 import modelS from "@/assets/model-s.jpg";
 import modelX from "@/assets/model-x.jpg";
 import cybertruck from "@/assets/cybertruck.jpg";
+import powerBike from "@/assets/power-bike.jpg";
+import superbike from "@/assets/superbike.jpg";
 
 export type Prize = {
   id: string;
