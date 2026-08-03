@@ -2,6 +2,8 @@ import cash from "@/assets/cash.jpg";
 import modelS from "@/assets/model-s.jpg";
 import modelX from "@/assets/model-x.jpg";
 import cybertruck from "@/assets/cybertruck.jpg";
+import powerBike from "@/assets/power-bike.jpg";
+import superbike from "@/assets/superbike.jpg";
 
 export type Prize = {
   id: string;
@@ -72,7 +74,28 @@ export const vehiclePrizes: Prize[] = [
   },
 ];
 
-export const allPrizes: Prize[] = [...cashPrizes, ...vehiclePrizes];
+export const bikePrizes: Prize[] = [
+  {
+    id: "power-bike",
+    name: "$20,000 Power Bike",
+    kind: "vehicle",
+    tagline: "Electric Performance",
+    description:
+      "A cutting-edge electric power bike delivering instant torque, sleek design, and thrilling performance for the urban rider.",
+    image: powerBike,
+  },
+  {
+    id: "superbike",
+    name: "$35,000 Superbike",
+    kind: "vehicle",
+    tagline: "Track-Ready Speed",
+    description:
+      "A premium superbike built for adrenaline, featuring race-inspired aerodynamics, precision handling, and uncompromising power.",
+    image: superbike,
+  },
+];
+
+export const allPrizes: Prize[] = [...cashPrizes, ...vehiclePrizes, ...bikePrizes];
 
 export function makeReference() {
   const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ0123456789";
