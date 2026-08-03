@@ -151,11 +151,23 @@ export function Landing({ onStart }: { onStart: () => void }) {
       </section>
 
       {/* VEHICLES */}
-      <section className="relative px-5 pb-28">
+      <section className="relative px-5 py-24">
         <div className="mx-auto max-w-6xl">
           <SectionHead eyebrow="Luxury Vehicles" title="Electric icons on the line." />
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {vehiclePrizes.map((p, i) => (
+              <PrizeCard key={p.id} prize={p} index={i} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* BIKES */}
+      <section className="relative px-5 pb-28">
+        <div className="mx-auto max-w-6xl">
+          <SectionHead eyebrow="Performance Bikes" title="Two wheels, zero limits." />
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {bikePrizes.map((p, i) => (
               <PrizeCard key={p.id} prize={p} index={i} />
             ))}
           </div>
