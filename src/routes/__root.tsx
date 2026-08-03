@@ -91,7 +91,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "Chase Luxury. Unlock Incredible Rewards. A cinematic promotional prize experience.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:image", content: "/og-image.jpg" },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: "/og-image.jpg" },
     ],
     links: [
       {
@@ -105,6 +109,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: "https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Manrope:wght@300;400;500;600&display=swap",
       },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "icon", href: "/icon-192.png", type: "image/png", sizes: "192x192" },
+      { rel: "icon", href: "/icon-512.png", type: "image/png", sizes: "512x512" },
+      { rel: "apple-touch-icon", href: "/apple-touch-icon.png", sizes: "180x180" },
     ],
   }),
 

@@ -35,8 +35,8 @@ export const cashPrizes: Prize[] = [
     image: cash,
   },
   {
-    id: "cash-100k",
-    name: "$100,000 USD",
+    id: "cash-75k",
+    name: "$75,000 USD",
     kind: "cash",
     tagline: "Apex Tier",
     description:

@@ -10,20 +10,29 @@ export function Landing({ onStart }: { onStart: () => void }) {
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0, scale: 0.98 }}>
       <header className="fixed inset-x-0 top-0 z-40">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
+          {/* Logo + name glass card */}
           <motion.div
             initial={{ opacity: 0, y: -14 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
-            className="flex items-center gap-2"
+            className="flex items-center gap-2 rounded-2xl border border-white/10 bg-white/5 px-3 py-2 backdrop-blur-md shadow-[0_2px_24px_oklch(0.62_0.24_27/0.15)]"
           >
-            <span className="grid h-8 w-8 place-items-center glass overflow-hidden glow-red">
-              <img src={logoSrc} alt="Nova Chase" className="h-full w-full object-contain" />
+            <span className="grid h-9 w-8 place-items-center overflow-visible flex-shrink-0">
+              <img src={logoSrc} alt="Nova Chase" className="h-9 w-auto object-contain" />
             </span>
             <span className="font-display text-lg tracking-[0.22em] uppercase">Nova Chase</span>
           </motion.div>
-          <span className="hidden text-[11px] uppercase tracking-[0.28em] text-muted-foreground sm:block">
+
+          {/* Promotional Experience glass pill */}
+          <motion.span
+            initial={{ opacity: 0, y: -14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.15 }}
+            className="hidden items-center gap-1.5 rounded-full border border-primary/25 bg-white/5 px-4 py-2 text-[11px] uppercase tracking-[0.28em] text-muted-foreground backdrop-blur-md shadow-[0_2px_16px_oklch(0.62_0.24_27/0.1)] sm:flex"
+          >
+            <span className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse" />
             Promotional Experience
-          </span>
+          </motion.span>
         </div>
       </header>
 
@@ -39,38 +48,6 @@ export function Landing({ onStart }: { onStart: () => void }) {
         />
 
         <div className="relative z-10 mx-auto w-full max-w-3xl text-center">
-          {/* Hero Logo — glassmorphism frame */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.6, rotate: -12 }}
-            animate={{ opacity: 1, scale: 1, rotate: 0 }}
-            transition={{ duration: 1.1, ease: [0.19, 1, 0.22, 1] }}
-            className="relative mx-auto mb-8 h-36 w-36 animate-float"
-          >
-            {/* Outer glow ring */}
-            <motion.div
-              aria-hidden
-              animate={{ opacity: [0.5, 1, 0.5], scale: [0.92, 1.06, 0.92] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="pointer-events-none absolute inset-0 rounded-[2rem] bg-primary/30 blur-[28px]"
-            />
-            {/* Glass card */}
-            <div className="relative h-full w-full overflow-hidden rounded-[2rem] glass animate-glow p-3">
-              {/* Inner subtle gradient overlay */}
-              <div
-                className="pointer-events-none absolute inset-0 rounded-[2rem]"
-                style={{
-                  background:
-                    "linear-gradient(135deg, oklch(1 0 0 / 0.12) 0%, transparent 50%, oklch(0.57 0.226 26.5 / 0.12) 100%)",
-                }}
-              />
-              <img
-                src={logoSrc}
-                alt="Nova Chase logo"
-                className="relative z-10 h-full w-full object-contain drop-shadow-[0_2px_18px_oklch(0.62_0.24_27/0.7)]"
-              />
-            </div>
-          </motion.div>
-
           <motion.span
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
