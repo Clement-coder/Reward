@@ -4,6 +4,7 @@ import modelX from "@/assets/model-x.jpg";
 import cybertruck from "@/assets/cybertruck.jpg";
 import powerBike from "@/assets/power-bike.jpg";
 import superbike from "@/assets/superbike.jpg";
+import superbikePro from "@/assets/superbike-pro.jpg";
 
 export type Prize = {
   id: string;
@@ -92,6 +93,15 @@ export const bikePrizes: Prize[] = [
     description:
       "A premium superbike built for adrenaline, featuring race-inspired aerodynamics, precision handling, and uncompromising power.",
     image: superbike,
+  },
+  {
+    id: "superbike-pro",
+    name: "$40,000 Superbike Pro",
+    kind: "vehicle",
+    tagline: "Race-Grade Engineering",
+    description:
+      "A flagship superbike crafted for the track and the street, loaded with top-shelf suspension, carbon fiber bodywork, and championship-derived electronics.",
+    image: superbikePro,
   },
 ];
 
