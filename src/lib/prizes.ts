@@ -94,6 +94,15 @@ export const bikePrizes: Prize[] = [
       "A premium superbike built for adrenaline, featuring race-inspired aerodynamics, precision handling, and uncompromising power.",
     image: superbike,
   },
+  {
+    id: "superbike-pro",
+    name: "$40,000 Superbike Pro",
+    kind: "vehicle",
+    tagline: "Race-Grade Engineering",
+    description:
+      "A flagship superbike crafted for the track and the street, loaded with top-shelf suspension, carbon fiber bodywork, and championship-derived electronics.",
+    image: superbikePro,
+  },
 ];
 
 export const allPrizes: Prize[] = [...cashPrizes, ...vehiclePrizes, ...bikePrizes];
