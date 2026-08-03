@@ -22,7 +22,7 @@ export const cashPrizes: Prize[] = [
     kind: "cash",
     tagline: "Momentum Tier",
     description:
-      "Perfect for investing in your future, launching a business, or achieving your biggest financial goals.",
+      "Imagine waking up tomorrow with $35,000 in your account. Pay off what's holding you back, bet on yourself, or finally start the business you've been dreaming about. This is the spark that changes everything.",
     image: cash,
   },
   {
@@ -31,7 +31,7 @@ export const cashPrizes: Prize[] = [
     kind: "cash",
     tagline: "Signature Tier",
     description:
-      "A life-changing cash reward that can help fund your dream lifestyle or major personal ambitions.",
+      "Fifty thousand dollars. No strings. No limits. Travel the world first-class, buy the car, invest in real estate, or simply give your family a life they never expected. This is what a turning point looks like.",
     image: cash,
   },
   {
@@ -40,7 +40,7 @@ export const cashPrizes: Prize[] = [
     kind: "cash",
     tagline: "Apex Tier",
     description:
-      "Our ultimate cash prize, designed to transform your future and open the door to extraordinary opportunities.",
+      "This isn't just money — it's momentum, freedom, and power handed to you at once. $75,000 to rewrite your story, silence the doubts, and step into the version of your life you always knew was possible.",
     image: cash,
   },
 ];
@@ -52,7 +52,7 @@ export const vehiclePrizes: Prize[] = [
     kind: "vehicle",
     tagline: "All-Electric Sedan",
     description:
-      "A luxury all-electric sedan with exceptional acceleration, advanced technology, premium interior, and impressive long-range performance.",
+      "0 to 60 in under 2 seconds. A cabin that feels like a private jet. The Tesla Model S doesn't just turn heads — it stops traffic. This is what it feels like to drive the future, every single day.",
     image: modelS,
   },
   {
@@ -61,7 +61,7 @@ export const vehiclePrizes: Prize[] = [
     kind: "vehicle",
     tagline: "Falcon Wing SUV",
     description:
-      "A premium electric SUV featuring Falcon Wing doors, spacious seating, cutting-edge safety features, and outstanding performance.",
+      "The doors open like wings. Literally. The Tesla Model X is the SUV that makes every arrival feel like an entrance — space for your crew, power for the road, and tech that makes everything else feel outdated.",
     image: modelX,
   },
   {
@@ -70,7 +70,7 @@ export const vehiclePrizes: Prize[] = [
     kind: "vehicle",
     tagline: "Exoskeleton Pickup",
     description:
-      "A bold, futuristic electric pickup with a durable stainless-steel exterior, powerful performance, and innovative design.",
+      "It looks like it drove straight out of a sci-fi film — because nothing on the road compares. Bulletproof stainless steel body, insane towing power, and zero emissions. The Cybertruck doesn't follow trends. It creates them.",
     image: cybertruck,
   },
 ];
@@ -82,7 +82,7 @@ export const bikePrizes: Prize[] = [
     kind: "vehicle",
     tagline: "Electric Performance",
     description:
-      "A cutting-edge electric power bike delivering instant torque, sleek design, and thrilling performance for the urban rider.",
+      "Silent. Fast. Unstoppable. This electric power bike hits with instant full torque the moment you twist the throttle — no revving, no waiting, just pure raw acceleration that pins you to the seat and grins back at you.",
     image: powerBike,
   },
   {
@@ -91,7 +91,7 @@ export const bikePrizes: Prize[] = [
     kind: "vehicle",
     tagline: "Track-Ready Speed",
     description:
-      "A premium superbike built for adrenaline, featuring race-inspired aerodynamics, precision handling, and uncompromising power.",
+      "Every curve is a conversation. Every straight is a statement. This superbike was built for riders who don't slow down — race-tuned suspension, precision aerodynamics, and a roar that announces you before you even arrive.",
     image: superbike,
   },
   {
@@ -100,7 +100,7 @@ export const bikePrizes: Prize[] = [
     kind: "vehicle",
     tagline: "Race-Grade Engineering",
     description:
-      "A flagship superbike crafted for the track and the street, loaded with top-shelf suspension, carbon fiber bodywork, and championship-derived electronics.",
+      "This is the machine that pros dream about and legends are made on. Carbon fiber everywhere, championship-grade electronics, and a powerband so savage it demands respect. Not for the faint-hearted. Built for the bold.",
     image: superbikePro,
   },
 ];
