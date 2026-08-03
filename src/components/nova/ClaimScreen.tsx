@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 import { motion } from "motion/react";
-import { MessageCircle, Send, Mail, Phone, MessagesSquare, RotateCcw, Copy, Check } from "lucide-react";
+import { MessageCircle, Send, Mail, RotateCcw, Copy, Check } from "lucide-react";
 import type { Prize } from "@/lib/prizes";
 import { makeReference } from "@/lib/prizes";
 import { Particles } from "./Particles";
@@ -61,30 +61,12 @@ export function ClaimScreen({ prize, onRestart }: { prize: Prize; onRestart: () 
     },
     {
       label: "Email Support",
-      note: SUPPORT_EMAIL,
+      note: "Send us an email",
       icon: Mail,
       href: mailtoLink,
       color: "from-primary/20 to-primary/10",
       border: "border-primary/30",
       glow: "hover:shadow-[0_0_24px_oklch(0.62_0.24_27/0.3)]",
-    },
-    {
-      label: "Live Chat",
-      note: "Available 24/7",
-      icon: MessagesSquare,
-      href: waLink,
-      color: "from-violet-500/20 to-violet-600/10",
-      border: "border-violet-500/30",
-      glow: "hover:shadow-[0_0_24px_oklch(0.72_0.18_280/0.3)]",
-    },
-    {
-      label: "Phone Support",
-      note: "Call our support team",
-      icon: Phone,
-      href: waLink,
-      color: "from-amber-500/20 to-amber-600/10",
-      border: "border-amber-500/30",
-      glow: "hover:shadow-[0_0_24px_oklch(0.82_0.18_70/0.3)]",
     },
   ];
 
@@ -189,7 +171,7 @@ export function ClaimScreen({ prize, onRestart }: { prize: Prize; onRestart: () 
         </div>
 
         {/* Contact options */}
-        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid gap-4 sm:grid-cols-3">
           {contactOptions.map((o, i) => (
             <motion.a
               key={o.label}
