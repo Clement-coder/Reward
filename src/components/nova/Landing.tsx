@@ -16,7 +16,7 @@ export function Landing({ onStart }: { onStart: () => void }) {
             transition={{ duration: 0.7 }}
             className="flex items-center gap-2"
           >
-            <span className="grid h-8 w-8 place-items-center rounded-xl glass overflow-hidden glow-red">
+            <span className="grid h-8 w-8 place-items-center glass overflow-hidden glow-red">
               <img src={logoSrc} alt="Nova Chase" className="h-full w-full object-contain" />
             </span>
             <span className="font-display text-lg tracking-[0.22em] uppercase">Nova Chase</span>
