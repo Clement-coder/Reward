@@ -77,25 +77,34 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Nova Chase — Premium Prize Challenge Platform" },
+      { title: "NovaPay | Instant Rewards & Cash Disbursement Portal" },
       {
         name: "description",
         content:
-          "Nova Chase is a premium interactive promotional experience with cash rewards and luxury electric vehicles.",
+          "NovaPay connects verified members with exclusive cash disbursements and high-value asset transfers. Secure. Fast. Confidential.",
       },
-      { name: "author", content: "Nova Chase" },
-      { property: "og:title", content: "Nova Chase — Premium Prize Challenge Platform" },
+      { name: "author", content: "NovaPay Financial Services" },
+      { name: "keywords", content: "cash rewards, disbursement, financial benefits, exclusive members, asset transfer, NovaPay" },
+      { property: "og:title", content: "NovaPay | Instant Rewards & Cash Disbursement Portal" },
       {
         property: "og:description",
         content:
-          "Chase Luxury. Unlock Incredible Rewards. A cinematic promotional prize experience.",
+          "Your verified reward is ready. Log in to the NovaPay portal to confirm your identity and initiate your cash or asset disbursement.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:site_name", content: "NovaPay Financial Services" },
       { property: "og:image", content: "/og-image.jpg" },
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "630" },
+      { property: "og:image:alt", content: "NovaPay — Secure Rewards Portal" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "NovaPay | Instant Rewards & Cash Disbursement Portal" },
+      {
+        name: "twitter:description",
+        content: "Your verified reward is ready. Access the NovaPay portal to initiate your disbursement securely.",
+      },
       { name: "twitter:image", content: "/og-image.jpg" },
+      { name: "twitter:image:alt", content: "NovaPay Secure Portal" },
     ],
     links: [
       {
